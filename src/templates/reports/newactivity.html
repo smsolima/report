@@ -1,0 +1,44 @@
+ {% extends 'base.html' %}
+<!DOCTYPE html>
+
+{% block body %}
+
+    
+    <div class=" container flex">
+<form method="post" class="justify-content-center">
+  {% csrf_token %}
+<table class="flaot-left table-responsive table table-striped table-bordered table-hover">
+<thead class="thead-dark"> 
+    <tr >
+        <th >Activity</th>
+       <th>CP</th>
+       <th>Area</th>
+       <th >Description</th>
+       <th>Remarks</th>
+   </tr>
+ </thead>
+
+    <tbody>
+        {{formset.management_form}} 
+        {% for form in formset %}
+       
+    <tr >
+        {% for field in form %}
+    <td>{{field}}</td>
+    {% endfor%}
+    </tr>
+    
+{% endfor%}
+</tbody>
+
+</table>
+   
+<!-- <table>{{formset}}</table> -->
+<div class="col">
+<button type="submit" class=" btn btn-primary btn-lg " >Add new Activity</button>
+<button class=" btn btn-success btn-lg " > <a href="{% url 'dailyreport_list' %}">back to home</a> </button>  
+</div>
+</form>
+</div>
+{% endblock body %}
+</html>

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+ <!DOCTYPE html >
+
+
+ {% block body %}
+   
+
+
+	<div id="page-wrap pull-right">
+		<textarea id="header" style="box-sizing: content-box;">DAILY REPORT</textarea>
+		    <div style="clear:both"></div>
+            <form method="post" action="" > 
+              {% csrf_token %}
+		         <div id="customer">
+                 
+                   <table id="meta"> 
+                 
+                       <tr>
+                    <td >Date</td>
+                    <td>{{form.datetimestamp}}</td>
+                 
+                </tr>
+				<tr>
+                    <td class="meta-head">Tempreture</td>
+                    <td>{{form.temp}}</td>
+                </tr>
+                <tr>
+                <tr>
+                    <td class="meta-head">Weather</td>
+
+                    
+                    <td><div class="due">{{form.weather}}</div></td>
+                    
+                </tr>
+                  <tr>
+                    <td class="meta-head">Wind</td>
+                    <td><div class="due">{{form.wind_velocity}}</div></td>
+                   </tr>
+				    <tr>
+                    <td class="meta-head">Shift</td>
+                    <td><div class="due">{{form.shift}}</div></td>
+                   </tr>
+            </table>
+
+            <table id="meta">
+                <tr>
+                    <td class="meta-head">Project Name:</td>
+                    <td>Assiut Supercritical Power Plant (1x650MW)</td>
+                </tr>
+                <tr>
+                    <td class="meta-head">UserName</td>
+                   
+                    
+                    <td> {{form.created_by}} {{user.username}} </td>
+                        
+                    
+                    
+                </tr>
+				<tr>
+                    <td class="meta-head"> Employee Title</td>
+                    <td><div class="due">{{user.user_title}}</div></td>
+                </tr>
+				<tr>
+                    <td class="meta-head"> Employee ID</td>
+                    <td><div class="due">{{user.user_pgesco_Id}}</div></td>
+                </tr>
+                <tr>
+                    <td class="meta-head">Discipline</td>
+                    <td><div class="due">{{user.Discipline}}</div></td>
+                </tr>  
+                
+            </table>
+
+        </div>
+        
+        <input type="submit" value= "Add Activity"  />
+        </form>	
+        
+	</div>
+    {% endblock body %}
+</html> 

@@ -1,0 +1,18 @@
+{% comment %} {% url 'insert_report' %} {% endcomment %}
+
+<form method="post" action="" > 
+ {% csrf_token %}
+{{formset.managment_form}}
+<table>
+{{report_form.as_table}}
+</table>
+<br>
+{% for form in activity_form %}
+
+{{form}}
+<hr>
+
+{% endfor %}
+<input type="submit" value="save">
+
+ 

@@ -1,0 +1,42 @@
+
+
+{% load static %}
+ <!DOCTYPE html >
+
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>DAILY REPORT </title>
+	<link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+	<link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}" />
+	<link rel='stylesheet' type='text/css' href="{% static 'css/print.css'%}" media="print" />
+	<link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script type='text/javascript' src="{% static 'js/jquery-1.3.2.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/example.js' %}"></script>
+
+</head>
+<body>
+
+	<div id="page-wrap">
+		<textarea id="header">DAILY REPORT</textarea>
+		    <div style="clear:both"></div>
+		         <div id="customer">
+                   
+<form method="post" action="">
+{% csrf_token %} 
+<table id="meta">
+{{report_form}}
+</table>
+<br>
+</n>
+ <div style="clear:both"></div>
+
+ <table >
+ 
+{{activity_form}}
+
+</table>
+
+<input type='submit' value ='submit' />  
+</form>
+</body>

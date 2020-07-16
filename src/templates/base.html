@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pgesco | Daily Report System</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
+  
+    <!-- Font Awesome -->
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+    <!-- NProgress -->
+    <!-- <link href="{% static 'css/nprogress.css'%}" rel="stylesheet"> -->
+    <!-- iCheck -->
+    <!-- <link href="{% static 'css/green.css'%}" rel="stylesheet"> -->
+    <!-- Datatables -->
+    
+    <link href="{% static 'css/dataTables.bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/buttons.bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/fixedHeader.bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/responsive.bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/scroller.bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{% static 'css/custom.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+   
+    <link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}" />
+	  <link rel='stylesheet' type='text/css' href="{% static 'css/print.css'%}" media="print" />
+	
+  </head>
+
+  <body  class= 'col' ,style="background-color: rgb(245, 248, 250);">
+    <!-- <div class="container body col"> -->
+       <!-- <div class="main_container d-flex p-2 bd-highlight "> -->
+        
+            <!-- /menu footer buttons -->
+          </div>
+        </div> 
+
+        <!-- top navigation -->
+
+        {% include "navbar.html" %} 
+       
+       
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        {% block body %}
+
+        {% endblock body %}
+       
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <!-- <div class="fixed-bottom float-right">
+            Pgesco - Daily Report System by Saber soliman 
+          </div> -->
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      <!-- </div>  -->
+    <!-- </div> -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <!-- Bootstrap -->
+   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'js/fastclick.js'%}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'js/nprogress.js'%}"></script>
+    <!-- iCheck -->
+    <script src="{% static 'js/icheck.min.js'%}"></script>
+    <!-- Datatables -->
+    <script src="{% static 'js/jquery.dataTables.min.js'%}"></script>
+    <script src="{% static 'js/dataTables.bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/dataTables.buttons.min.js'%}"></script>
+    <script src="{% static 'js/buttons.bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/buttons.flash.min.js'%}"></script>
+    <script src="{% static 'js/buttons.html5.min.js'%}"></script>
+    <script src="{% static 'js/buttons.print.min.js'%}"></script>
+    <script src="{% static 'js/dataTables.fixedHeader.min.js'%}"></script>
+    <script src="{% static 'js/dataTables.keyTable.min.js'%}"></script>
+    <script src="{% static 'js/dataTables.responsive.min.js'%}"></script>
+    <script src="{% static 'js/responsive.bootstrap.js'%}"></script>
+    <script src="{% static 'js/dataTables.scroller.min.js'%}"></script>
+    <script src="{% static 'js/jszip.min.js'%}"></script>
+    <script src="{% static 'js/pdfmake.min.js'%}"></script>
+    <script src="{% static 'js/vfs_fonts.js'%}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'js/custom.min.js'%}"></script>
+    <script src="{% static 'js/print.js'%}"></script>
+   <script>
+function  printDiv(){
+  var divContents=document.getElementById("data").innerHTML;
+  var a =window.open('','','height=500,width=500');
+  a.document.write(divContents);
+  a.document.close();
+  a.print();
+}
+
+
+
+
+   </script>
+  </body>
+</html>

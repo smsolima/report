@@ -1,0 +1,114 @@
+{% extends "base.html"%}
+ 
+{% block body %}
+<input type="button"value="print" onclick="printDiv()">
+	<div id="data" class= "justify-content-center">
+	
+   
+		<textarea id="header">DAILY REPORT</textarea>
+
+		
+		<div class="right_col  container" role="main">
+          <!-- top tiles -->
+          <div class="row"  >
+		
+		
+		
+           	<div class=" col-sm-6 table-responsive ">
+            <table  class=" display table table-bordered ">
+                <tr>
+                    <td >Project Name:</td>
+                    <td>Assiut Supercritical Power Plant (1x650MW)</td>
+                </tr>
+                <tr>
+
+                    <td >Name</td>
+                    <td> {{account.firstname}} {{account.lastname}}</td>
+                </tr>
+				<tr>
+                    <td> Employee Title</td>
+                    <td><div class="due">{{account.user_title}}</div></td>
+                </tr>
+				<tr>
+                    <td > Employee ID</td>
+                    <td><div class="due">{{account.user_pgesco_Id}}</div></td>
+                </tr>
+                <tr>
+                    <td >Discipline</td>
+                    <td><div >{{account.Discipline}}</div></td>
+                </tr>
+ 
+            </table>
+		
+		    </div>
+            <div class=" col-sm-6 table-responsive ">
+         <table   class=" display table table-bordered">
+                
+
+                    <td >Date</td>
+                    <td>{{report.datetimestamp}}</td>
+                </tr>
+				<tr>
+                    <td >Tempreture</td>
+                    <td>{{report.temp}}</td>
+                </tr>
+                <tr>
+                <tr>
+                    <td >Weather</td>
+                    <td><div >{{report.weather}}</div></td>
+                </tr>
+                  <tr>
+                    <td >Wind</td>
+                    <td><div >{{report.wind_velocity}}</div></td>
+                   </tr>
+				    <tr>
+                    <td >Shift</td>
+                    <td><div {{shift}}></div></td>
+                   </tr>
+            </table>
+</div>
+        
+		<div class=" col-sm-12 table-responsive ">
+		<table   class=" display table table-bordered  table-striped" style="width:100%">
+		<thead class="thead-dark">
+		  <tr >
+		      <th scope="col">#</th>
+			   <th scope="col">Activity</th>
+			  <th scope="col">CP</th>
+		      <th scope="col">Area</th>
+		      <th scope="col">Description</th>
+		      <th scope="col">Remarks</th>
+		     
+		  </tr>
+          </thead>
+		  {% for activity in activities%}
+		  <tr >
+		     <td scope="row">  {{report.id}} </td>
+		       <td scope="row"> {{ activity.activity }}</td>
+		     <td scope="row">{{activity.cp}}</td>
+		      
+		      
+		    
+			  <td scope="row">{{activity.area}}</td>
+            <td scope="row"> {{activity.description}}></td>
+			  <td scope="row"> {{activity.remarks}}></td>
+		  </tr>
+          {% empty%}
+          <li> Sorry ,no activity for this report</li>
+          {% endfor %}
+		</table>
+        </div>
+		
+		<div class=" col-sm-12 " >
+		  <h5>PGESCO Confidential</h5>
+          
+		  <textarea  style="width:500px" >Electronic documents once printed are uncontrolled and may becomes outdated. </textarea>
+		</div>
+	</div>
+        </div>
+        
+	</div>
+
+	
+{% endblock body%}
+
